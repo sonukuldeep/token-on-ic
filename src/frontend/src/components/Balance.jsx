@@ -1,19 +1,9 @@
-import React, { useState } from "react";
-import { Principal } from "@dfinity/principal";
-import { backend } from "../../../declarations/backend"
+import React from "react";
 
 function Balance() {
-    const [inputValue, setInput] = useState("")
-    const [balance, setBalance] = useState(0)
-    const [symbol, setSymbol] = useState("")
 
     async function handleClick() {
-        if (!inputValue) return
-        const principal = Principal.fromText(inputValue)
-        const balance = await backend.balanceOf(principal)
-        const symbol = await backend.getSymbol()
-        setBalance(balance.toLocaleString())
-        setSymbol(symbol)
+        console.log("Balance Button Clicked");
     }
 
 
@@ -25,8 +15,6 @@ function Balance() {
                     id="balance-principal-id"
                     type="text"
                     placeholder="Enter a Principal ID"
-                    value={inputValue}
-                    onChange={e => setInput(e.target.value)}
                 />
             </p>
             <p className="trade-buttons">
@@ -37,7 +25,7 @@ function Balance() {
                     Check Balance
                 </button>
             </p>
-            {balance.length > 0 ? <p>This account has a balance of {balance} {symbol}.</p> : ""}
+            <p>This account has a balance of XYZ.</p>
         </div>
     );
 }

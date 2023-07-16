@@ -8,7 +8,9 @@ Dfinity v0.18.0 and Reactjs v18.2.0
 The DFINITY Foundation is a major contributor to the Internet Computer blockchain.
 
 ## This repo follows Angella Yu's udemy course
-Lesson 439-448 and each branch is a chapter from her course 
+Lesson 439-448 and each branch is a chapter from her course.
+
+This repo uses updated packages and maybe different slightly from the tutorial so as fix certain compactibility issues
 
 ## How to make it work?
 1. Install Nodejs v16.0.0 or higher.

@@ -6,3 +6,5 @@
 - Check balance in terminal:- `dfx canister call backend balanceOf "( $OWNER_PUBLIC_KEY )"`
 
 temrl-ptoir-cehov-rvau5-gfdoo-d3gfy-rzbsv-hdzlr-cmbrb-ehgk4-cae
+
+2vxsx-fae

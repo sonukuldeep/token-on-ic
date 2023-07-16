@@ -1,9 +1,11 @@
 import Principal "mo:base/Principal";
 import HashMap "mo:base/HashMap";
+import Debug "mo:base/Debug";
+
 actor Token {
 
   var owner : Principal = Principal.fromText("temrl-ptoir-cehov-rvau5-gfdoo-d3gfy-rzbsv-hdzlr-cmbrb-ehgk4-cae");
-  var totalSupply : Nat = 1000000000;
+  var totalSupply : Nat = 1000_000_000;
   var symbol : Text = "SCOIN";
 
   var balances = HashMap.HashMap<Principal, Nat>(1, Principal.equal, Principal.hash);
@@ -20,5 +22,15 @@ actor Token {
 
   public query func getSymbol() : async Text {
     return symbol;
+  };
+
+  public shared (msg) func payOut() : async Text {
+    if (balances.get(msg.caller) == null) {
+      var amount = 10_000;
+      balances.put(msg.caller, amount);
+      return "Success!";
+    } else {
+      return "You have already claimed!";
+    };
   };
 };

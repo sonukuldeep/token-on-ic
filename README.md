@@ -1,42 +1,24 @@
 ![main-image](https://wsrv.nl/?url=repository-images.githubusercontent.com/282042743/9c891880-fdc0-11ea-8ccc-f3cd9c00e5ae&w=600)
 
-# Dfinity and Reactjs starter template
+# Create your own token in IC
 
-Dfinity v0.17.0 and Reactjs v18.2.0
+Dfinity v0.18.0 and Reactjs v18.2.0
 
 ## Intro
 The DFINITY Foundation is a major contributor to the Internet Computer blockchain.
+
+## This repo follows Angella Yu's udemy course
+Lesson 439-448 and each branch is a chapter from her course 
 
 ## How to make it work?
 1. Install Nodejs v16.0.0 or higher.
 2. Follow [this link](https://internetcomputer.org/docs/current/tutorials/deploy_sample_app#step-1-install-the-internet-computer-ic-sdk) and install Internet computer SDK if you dont already have it.
 1. Clone this repo to your machine
-2. Rename project name as per your need. For example lets<br> assume you renamed your project to my_app then<br> change these folder names too
-```css
-src
-├── template_backend   --> my_app_backend
-└── template_frontend  --> my_app_frontend
-```
-5. Replace all instance of `template_backend` with `my_app_backend` within 'src/my_app_frontend/src/index.jsx' file.
-6. Replace all instance of `template_` with `my_app_` within 'dfx.json' file.
-7. Change `template_frontend` with `my_app_frontend` on line 10 within 'webpack.config.js' file. 
-
-## Running the project locally
-
-Test your project locally by using the following commands:
-
-```bash
-# Starts the replica, running in the background
-dfx start
-
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy # run from different terminal
-
-# Start react frontend with this command
-npm start
-```
-
-It will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+2. cd into project folder
+4. Run `dfx start` on a seperate terminal
+3. Run `npm i` to install all packages
+5. Run `dfx deploy` to generate all canisters and configurations
+5. Finally run `npm start` and open http://localhost:8080 on browser
 
 Enjoy :)
 

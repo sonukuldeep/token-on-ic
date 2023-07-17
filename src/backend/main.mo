@@ -26,9 +26,9 @@ actor Token {
 
   public shared (msg) func payOut() : async Text {
     if (balances.get(msg.caller) == null) {
-      var amount = 10_000;
-      balances.put(msg.caller, amount);
-      return "Success!";
+      let amount = 10_000;
+      let result = await transfer(msg.caller, amount);
+      return result;
     } else {
       return "You have already claimed!";
     };

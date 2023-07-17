@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { backend } from '../../../declarations/backend'
 import { Principal } from '@dfinity/principal';
+import { authenticatedCanister } from '../lib/GetUser';
 
 function Transfer() {
     const [amount, setAmount] = useState(0)
@@ -13,7 +14,8 @@ function Transfer() {
         setFeedbackText("")
         if (!amount || !recipient) return
         const recipientsPrincipal = Principal.fromText(recipient)
-        const response = await backend.transfer(recipientsPrincipal, amount)
+        const response = await authenticatedCanister.transfer(recipientsPrincipal, amount)
+        // const response = await backend.transfer(recipientsPrincipal, amount)
         setFeedbackText(response)
         setIsDisabled(false)
     }

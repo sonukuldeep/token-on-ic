@@ -12,16 +12,18 @@ if (await authClient.isAuthenticated()) {
 } else
   await authClient.login({
     identityProvider: "https://identity.ic0.app/#authorize",
-    maxTimeToLive: BigInt(60 * 60 * 1000 * 1000 * 1000),
+    maxTimeToLive: BigInt( 60 * 1000 * 1000 * 1000),
     onSuccess: () => {
       handleAuthentication(authClient)
     }
   })
 
 async function handleAuthentication(authClient) {
+  const { _principal: userPrincipal } = await authClient.getIdentity()
+
   root.render(
     <StrictMode>
-      <App />
+      <App loggedInPrincipal={userPrincipal.toString()} />
     </StrictMode>
   );
 }

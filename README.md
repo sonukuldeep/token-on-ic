@@ -1,3 +1,5 @@
+*This code is for educational purpose only and it has not been tested. Use at you own risk. 
+
 ![main-image](https://wsrv.nl/?url=repository-images.githubusercontent.com/282042743/9c891880-fdc0-11ea-8ccc-f3cd9c00e5ae&w=600)
 
 # Create your own token in IC

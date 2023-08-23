@@ -11,19 +11,20 @@ if (await authClient.isAuthenticated()) {
   handleAuthentication(authClient)
 } else
   await authClient.login({
-    identityProvider: "https://identity.ic0.app/#authorize",
-    maxTimeToLive: BigInt( 60 * 1000 * 1000 * 1000),
+    // identity provider address is pointing to localhost at the moment
+    // when deploying to mainnet change to 
+    // identityProvider: "https://identity.ic0.app/#authorize",
+    identityProvider: "http://127.0.0.1:4943/?canisterId=be2us-64aaa-aaaaa-qaabq-cai",
+    maxTimeToLive: BigInt(60 * 1000 * 1000 * 1000),
     onSuccess: () => {
       handleAuthentication(authClient)
     }
   })
 
 async function handleAuthentication(authClient) {
-  const { _principal: userPrincipal } = await authClient.getIdentity()
-
   root.render(
     <StrictMode>
-      <App loggedInPrincipal={userPrincipal.toString()} />
+      <App />
     </StrictMode>
   );
 }
